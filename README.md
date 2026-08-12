@@ -1,31 +1,17 @@
-# VodaPay Vouchers — Content Landing Page
+# VodaPay Voucher Campaign Landing Page
 
-A responsive, single-page content landing page mockup for the VodaPay Vouchers product (airtime, data, electricity, gift cards, entertainment and bill-payment vouchers).
+Static, self-contained export of Experience B for the Voucher Advance campaign.
 
-## Structure
+## Run locally
 
-```
-index.html              Page markup
-assets/css/styles.css   Styling (responsive, light/dark aware)
-assets/js/main.js       Mobile nav toggle + footer year
-```
+Serve the repository root with any static web server, then open:
 
-## Running locally
+`/voucher-campaign-landing-page/`
 
-No build step required — it's plain HTML/CSS/JS.
+All page resources use document-relative paths, so the same files work from the GitHub Pages repository subdirectory.
 
-```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
+## Adobe Target integration
 
-## Sections
+The campaign is deliberately separated into `index.html`, `campaign.css`, `campaign.js`, and `assets/`. For a Target implementation, inject the markup inside `<main>` into the existing page, load the stylesheet and script from the GitHub Pages HTTPS URLs, and scope/QA the offer against the production page CSS and Content Security Policy.
 
-- Hero with app download CTA
-- Voucher category grid (Airtime, Data, Electricity, Gift Cards, Entertainment, Bill Payments, Ride & Travel)
-- How it works (3-step flow)
-- Benefits
-- Testimonials
-- FAQ
-- App download CTA band
-- Footer
+The JavaScript fires the requested `utag.view` on load and `utag.link` on CTA clicks only when Tealium's `window.utag` API is available. CTA routing selects the Apple App Store on iOS/iPadOS and Google Play otherwise.
