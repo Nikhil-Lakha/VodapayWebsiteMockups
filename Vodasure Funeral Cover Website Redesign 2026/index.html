@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#e60000">
+  <title>VodaSure Funeral Cover</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-button back" type="button" aria-label="Go back" hidden><span aria-hidden="true">←</span></button>
+    <a href="./" class="brand" aria-label="VodaSure home"><img src="assets/vodasure-logo.svg" alt="VodaSure"></a>
+    <button class="help" type="button" data-open-help><span class="help-icon">?</span><span>Help</span></button>
+  </header>
+
+  <main id="app" class="app" tabindex="-1">
+    <section class="screen active" data-screen="welcome" aria-labelledby="welcome-title">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">VodaSure Funeral Cover</span>
+          <h1 id="welcome-title">Protect the people who matter most</h1>
+          <p class="lead">Get affordable funeral cover for you and your family, with cover of up to <strong>R100 000</strong>.</p>
+          <ul class="benefits">
+            <li><span>✓</span> No medical exams</li>
+            <li><span>✓</span> Cover for up to 10 family members</li>
+            <li><span>✓</span> A simple, secure application</li>
+          </ul>
+          <button class="primary large" type="button" data-next="about">Get covered</button>
+          <p class="fine-print">It only takes a few minutes.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="circle one"></div><div class="circle two"></div><img src="assets/shield-heart.svg" alt=""><div class="family"><i></i><i></i><i></i></div></div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="about" aria-labelledby="about-title">
+      <div class="journey">
+        <div class="progress"><span>Step 1 of 4</span><strong>About you</strong><div><i style="width:25%"></i></div></div>
+        <form id="about-form" novalidate>
+          <h1 id="about-title">Let’s start with your details</h1><p class="intro">We need a few details to personalise your cover.</p>
+          <div class="field"><label for="first-name">First name</label><input id="first-name" name="firstName" autocomplete="given-name" required><small>Please enter your first name.</small></div>
+          <div class="field"><label for="last-name">Last name</label><input id="last-name" name="lastName" autocomplete="family-name" required><small>Please enter your last name.</small></div>
+          <div class="field"><label for="id-number">South African ID number</label><input id="id-number" name="idNumber" inputmode="numeric" maxlength="13" autocomplete="off" required aria-describedby="id-hint"><p id="id-hint" class="hint">13 digits, with no spaces.</p><small>Enter a valid 13-digit South African ID number.</small></div>
+          <fieldset><legend>Are you a South African citizen?</legend><div class="choice-row"><label class="choice"><input type="radio" name="citizen" value="Yes" required><span>Yes</span></label><label class="choice"><input type="radio" name="citizen" value="No"><span>No</span></label></div><small>Please choose an option.</small></fieldset>
+          <button class="primary full" type="submit">Continue</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="cover" aria-labelledby="cover-title">
+      <div class="journey wide"><div class="progress"><span>Step 2 of 4</span><strong>Your cover</strong><div><i style="width:50%"></i></div></div>
+        <form id="cover-form" novalidate><h1 id="cover-title">Choose your cover amount</h1><p class="intro">Select the amount that feels right for you. Your monthly premium updates instantly.</p>
+          <div class="cover-grid" role="radiogroup" aria-label="Cover amount">
+            <label class="cover-card"><input type="radio" name="cover" value="30000" data-premium="49"><span class="radio-dot"></span><span class="amount">R30 000</span><span>R49 pm</span></label>
+            <label class="cover-card selected"><input type="radio" name="cover" value="50000" data-premium="79" checked><span class="popular">Most popular</span><span class="radio-dot"></span><span class="amount">R50 000</span><span>R79 pm</span></label>
+            <label class="cover-card"><input type="radio" name="cover" value="75000" data-premium="109"><span class="radio-dot"></span><span class="amount">R75 000</span><span>R109 pm</span></label>
+            <label class="cover-card"><input type="radio" name="cover" value="100000" data-premium="139"><span class="radio-dot"></span><span class="amount">R100 000</span><span>R139 pm</span></label>
+          </div>
+          <div class="quote"><span>Your estimated premium</span><strong id="premium">R79 <small>/ month</small></strong><p>Final premium is subject to confirmation.</p></div>
+          <button class="primary full" type="submit">Continue</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="contact" aria-labelledby="contact-title"><div class="journey"><div class="progress"><span>Step 3 of 4</span><strong>Contact details</strong><div><i style="width:75%"></i></div></div>
+      <form id="contact-form" novalidate><h1 id="contact-title">How can we reach you?</h1><p class="intro">We’ll use these details to keep you updated about your application.</p>
+        <div class="field"><label for="mobile">Mobile number</label><div class="prefix"><span>+27</span><input id="mobile" name="mobile" inputmode="tel" maxlength="10" autocomplete="tel" required placeholder="82 123 4567"></div><small>Enter a valid South African mobile number.</small></div>
+        <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="name@example.com"><small>Enter a valid email address.</small></div>
+        <label class="check"><input id="consent" type="checkbox" required><span>I agree that VodaSure may contact me about this application and accept the <button type="button" data-open-terms>terms and conditions</button>.</span></label><p class="check-error">Please accept the terms and conditions.</p>
+        <button class="primary full" type="submit">Review application</button>
+      </form></div>
+    </section>
+
+    <section class="screen" data-screen="review" aria-labelledby="review-title"><div class="journey"><div class="progress"><span>Step 4 of 4</span><strong>Review</strong><div><i style="width:100%"></i></div></div>
+      <div><h1 id="review-title">Check your details</h1><p class="intro">Make sure everything looks right before submitting.</p><div class="summary"><div><span>Policyholder</span><strong id="summary-name">—</strong></div><div><span>ID number</span><strong id="summary-id">—</strong></div><div><span>Cover amount</span><strong id="summary-cover">R50 000</strong></div><div><span>Monthly premium</span><strong id="summary-premium">R79</strong></div><div><span>Contact</span><strong id="summary-contact">—</strong></div></div><button class="primary full" id="submit-application" type="button">Submit application</button><button class="text-button" type="button" data-edit="about">Edit personal details</button></div>
+    </div></section>
+
+    <section class="screen" data-screen="success" aria-labelledby="success-title"><div class="success-card"><div class="success-mark">✓</div><h1 id="success-title">You’re all done!</h1><p>Thanks, <strong id="success-name">there</strong>. Your VodaSure Funeral Cover application has been received.</p><div class="reference"><span>Application reference</span><strong id="reference">VS-000000</strong></div><p>We’ll send confirmation to your mobile number and email address shortly.</p><button class="primary full" type="button" id="start-over">Done</button></div></section>
+  </main>
+
+  <dialog id="info-dialog"><button class="dialog-close" aria-label="Close">×</button><h2>Need help?</h2><p>Call us on <strong>082 135</strong> from a Vodacom number. We’re available Monday to Friday, 08:00–17:00.</p><button class="primary full dialog-ok">Got it</button></dialog>
+  <dialog id="terms-dialog"><button class="dialog-close" aria-label="Close">×</button><h2>Terms and conditions</h2><p>This prototype demonstrates the VodaSure Funeral Cover application journey. Cover, premiums and eligibility remain subject to the final policy terms, successful verification and acceptance by the insurer.</p><button class="primary full dialog-ok">Close</button></dialog>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body></html>
